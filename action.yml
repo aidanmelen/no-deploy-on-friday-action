@@ -1,0 +1,33 @@
+# action.yml
+name: 'No Deploys On Friday.'
+description: '???'
+inputs:
+  days:
+    description: '???'
+    required: false
+    default: 'FRIDAY, SATURDAY, SUNDAY'
+  TZ:
+    description: 'The TZ name. Defaults to `UTC`. See Wikipedia for the complete list of TZs: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones'
+    required: false
+    default: 'UTC'
+  country:
+    description: '???'
+    required: false
+    default: 'US'
+  HOLIDAYS:
+    description: '???'
+    required: false
+    default: 'true'
+  ONLY_BEFORE_MONDAY_HOLIDAY:
+    description: "???"
+    required: false
+    default: 'false'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    DAYS: ${{ inputs.days }}
+    TIMEZOME: ${{ inputs.timezome }}
+    COUNTRY: ${{ inputs.country }}
+    HOLIDAYS: ${{ inputs.holidays }}
+    ONLY_BEFORE_MONDAY_HOLIDAY: ${{ inputs.ONLY_BEFORE_MONDAY_HOLIDAY }}

@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: No Deployments on Friday
+        uses: ./
+        id: no-deployment-on-friday
+        env:
+          NO_DEPLOYMENT_DAYS: 'Friday, Saturday, Sunday'
+          TZ: 'MST'
+          COUNTRY: 'US'
+          HOLIDAYS: true
