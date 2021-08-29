@@ -20,3 +20,5 @@ jobs:
           HOLIDAYS: true
       - name: Get the output reason
         run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
+      - name: Mock Deployment
+        run: echo "Deploy something here..."

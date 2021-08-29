@@ -9,10 +9,12 @@ COPY requirements.txt /requirements.txt
 
 RUN pip install -r /requirements.txt
 
+COPY entrypoint.sh /entrypoint.sh
+
 COPY src/app /app
 
 WORKDIR /app
 
-ENTRYPOINT ["python"]
+ENTRYPOINT ["/bin/sh"]
 
-CMD ["/app/main.py"]
+CMD ["/entrypoint.sh"]

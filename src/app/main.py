@@ -25,15 +25,13 @@ def main():
     if is_today_a_no_deployment_day:
 
         print(
-            f"::set-output name=reason::Do not deploy today ({day_name}). We do not deploy on {helpers.comma_separator(NO_DEPLOYMENT_DAY_LIST)}."
+            f"Do not deploy today ({day_name}). We do not deploy on {helpers.comma_separator(NO_DEPLOYMENT_DAY_LIST)}."
         )
         sys.exit(1)
 
     elif is_today_a_holiday:
 
-        print(
-            f"::set-output name=reason::Do not deploy today ({day_name}). We do not deploy on {inputs.COUNTRY} holidays."
-        )
+        print(f"Do not deploy today ({day_name}). We do not deploy on {inputs.COUNTRY} holidays.")
         sys.exit(1)
 
     else:
@@ -42,7 +40,7 @@ def main():
             " and on {inputs.COUNTRY} holidays." if inputs.HOLIDAYS.lower() == "true" else ""
         )
         print(
-            f"::set-output name=reason::Deploying today ({day_name}). We deploy on {helpers.comma_separator(DEPLOYMENT_DAY_LIST)}{additional_reason}"
+            f"Deploying today ({day_name}). We deploy on {helpers.comma_separator(DEPLOYMENT_DAY_LIST)}{additional_reason}"
         )
         sys.exit(0)
 
