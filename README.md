@@ -1,3 +1,7 @@
+[![Lint](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/lint.yml)
+[![Tests](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/tests.yml/badge.svg)](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/tests.yml)
+[![Main](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/main.yml/badge.svg)](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/main.yml)
+
 # No Deploy on Friday action
 
 This action aims to codify the unspoken rule of "No Deployments on Friday". This is achieved by simply terminating the action with a non-zero exit code when the date conditions are met; which in turn, causes the remaining steps in the workflow to cancel. At last, your weekend is safe once again.
@@ -37,7 +41,7 @@ Simple example.
 - name: No Deployments on Friday
   uses: ./
   id: no-deployment-on-friday
-- name: Get the output reason
+- name: Reason For Previous Step
   if: always()
   run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
 - name: Mock Deployment
@@ -57,7 +61,7 @@ Complete example.
     TZ: 'MST'
     COUNTRY: 'US'
     HOLIDAYS: true
-- name: Get the output reason
+- name: Reason For Previous Step
   if: always()
   run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
 - name: Mock Deployment
