@@ -7,7 +7,9 @@ ENV HOLIDAYS='true'
 
 RUN pip install holidays
 
-COPY app/ /app/
+COPY src/app /app
+
+WORKDIR /app
 
 ENTRYPOINT ["python"]
 

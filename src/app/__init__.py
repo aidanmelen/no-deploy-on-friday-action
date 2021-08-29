@@ -1,0 +1,1 @@
+"""No deploy on friday."""

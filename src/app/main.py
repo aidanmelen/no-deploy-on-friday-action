@@ -1,8 +1,5 @@
 """The Main Github action workflow."""
 
-# from zoneinfo import ZoneInfo
-
-# import datetime
 import holidays
 import sys
 
