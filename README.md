@@ -4,7 +4,7 @@
 
 # No Deploy on Friday action
 
-This action aims to codify the unspoken rule of "No Deployments on Friday". This is achieved by simply terminating the action with a non-zero exit code when the date conditions are met; which in turn, causes the remaining steps in the workflow to cancel. At last, your weekend is safe once again.
+This action aims to codify the unwritten rules like "No Deployments on Friday".. This is achieved by simply terminating the action with a non-zero exit code when the date conditions are met; which in turn, causes the remaining steps in the workflow to cancel. At last, your weekend is safe once again.
 
 ## Inputs
 
