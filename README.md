@@ -39,7 +39,7 @@ Simple example.
 - name: Checkout
   uses: actions/checkout@v2
 - name: Weekend Saver
-  uses: aws-actions/no-deploy-on-friday@v0.1.0
+  uses: aidanmelen/no-deploy-on-friday-action@v0.1.0
   id: weekend-saver
 - name: Reason For Previous Step
   if: always()
@@ -54,7 +54,7 @@ Complete example.
 - name: Checkout
   uses: actions/checkout@v2
 - name: Weekend Saver
-  uses: aws-actions/no-deploy-on-friday@v0.1.0
+  uses: aidanmelen/no-deploy-on-friday-action@v0.1.0
   id: weekend-saver
   env:
     NO_DEPLOYMENT_DAYS: 'Friday, Saturday, Sunday'
