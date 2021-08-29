@@ -1,5 +1,5 @@
 # action.yml
-name: 'No Deploy On Friday.'
+name: 'No Deploy On Friday'
 description: 'This action aims to codify the unwritten rules like "No Deployments on Friday".'
 inputs:
   NO_DEPLOYMENT_DAYS:
