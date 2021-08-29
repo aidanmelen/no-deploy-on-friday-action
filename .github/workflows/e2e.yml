@@ -8,9 +8,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: No Deployments on Friday
-        uses: aws-actions/no-deploys-on-friday@v0.1.0
-        id: no-deployment-on-friday
+      - name: Weekend Saver
+        uses: aws-actions/no-deploy-on-friday@v0.1.0
+        id: weekend-saver
         env:
           NO_DEPLOYMENT_DAYS: 'Friday, Saturday, Sunday'
           TZ: 'MST'
@@ -18,6 +18,6 @@ jobs:
           HOLIDAYS: true
       - name: Get the output reason
         if: always()
-        run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
+        run: echo "${{ steps.weekend-saver.outputs.reason }}"
       - name: Mock Deployment
         run: echo "Deploy something here..."

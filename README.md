@@ -38,12 +38,12 @@ Simple example.
 ```yaml
 - name: Checkout
   uses: actions/checkout@v2
-- name: No Deployments on Friday
-  uses: aws-actions/no-deploys-on-friday@v0.1.0
-  id: no-deployment-on-friday
+- name: Weekend Saver
+  uses: aws-actions/no-deploy-on-friday@v0.1.0
+  id: weekend-saver
 - name: Reason For Previous Step
   if: always()
-  run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
+  run: echo "${{ steps.no-deploy-on-friday.outputs.reason }}"
 - name: Mock Deployment
   run: echo "Deploy something here..."
 ```
@@ -53,9 +53,9 @@ Complete example.
 ```yaml
 - name: Checkout
   uses: actions/checkout@v2
-- name: No Deployments on Friday
-  uses: aws-actions/no-deploys-on-friday@v0.1.0
-  id: no-deployment-on-friday
+- name: Weekend Saver
+  uses: aws-actions/no-deploy-on-friday@v0.1.0
+  id: weekend-saver
   env:
     NO_DEPLOYMENT_DAYS: 'Friday, Saturday, Sunday'
     TZ: 'MST'
@@ -63,7 +63,7 @@ Complete example.
     HOLIDAYS: true
 - name: Reason For Previous Step
   if: always()
-  run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
+  run: echo "${{ steps.no-deploy-on-friday.outputs.reason }}"
 - name: Mock Deployment
   run: echo "Deploy something here..."
 ```
