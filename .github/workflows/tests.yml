@@ -1,0 +1,15 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install python requirements
+        run: pip install -r requirements.txt
+      - name: Run python unittests
+        run: python src/app/tests.py

@@ -6,26 +6,22 @@ This action aims to codify the unspoken rule of "No Deployments on Friday". This
 
 ## `NO_DEPLOYMENT_DAYS`
 
-**Optional** A comma delimited list of weekdays that will prevent deployments. Defaults to `"Friday, Saturday, Sunday"`.
+**Optional** A comma delimited list of weekdays that we do not deploy on. Defaults to `"Friday, Saturday, Sunday"`.
 
 ## `TZ`
 
-**Optional** The timezone name. Defaults to `UTC`. See Wikipedia for the complete list of timezone names: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
+**Optional** The timezone name. See Wikipedia for the complete list of timezone names: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones. Defaults to `UTC`.
 
 ## `COUNTRY`
 
-**Optional** The country of origin. This determines which the holiday calendar to use.
+**Optional** The country of origin. This determines which the national holiday calendar to use. Defaults to "`US`"
 
 
 ## `HOLIDAYS`
 
-**Optional** Whether to prevent deployments on holidays. This is applied in addition to the "`NO_DEPLOYMENT_DAYS`" input.
+**Optional** Whether to prevent deployments on national holidays. This is applied in addition to the "`NO_DEPLOYMENT_DAYS`" input. Defaults to "`true`"
 
 ## Outputs
-
-## `deployment`
-
-'true' if the deployment was canceled and otherwise 'false'.
 
 ## `reason`
 

@@ -17,3 +17,5 @@ jobs:
           TZ: 'MST'
           COUNTRY: 'US'
           HOLIDAYS: true
+      - name: Get the output reason
+        run: echo "The reason was ${{ steps.no-deployment-on-friday.outputs.reason }}"

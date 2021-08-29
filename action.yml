@@ -2,26 +2,22 @@
 name: 'No Deploys On Friday.'
 description: '???'
 inputs:
-  days:
-    description: '???'
+  NO_DEPLOYMENT_DAYS:
+    description: A comma delimited list of weekdays that we do not deploy on. Defaults to `"Friday, Saturday, Sunday"`.
     required: false
     default: 'FRIDAY, SATURDAY, SUNDAY'
   TZ:
-    description: 'The TZ name. Defaults to `UTC`. See Wikipedia for the complete list of TZs: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones'
+    description: 'The timezone name. See Wikipedia for the complete list of timezone names: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones. Defaults to `UTC`.'
     required: false
     default: 'UTC'
-  country:
-    description: '???'
+  COUNTRY:
+    description: 'The country of origin. This determines which the national holiday calendar to use. Defaults to "`US`"'
     required: false
     default: 'US'
   HOLIDAYS:
-    description: '???'
+    description: Whether to prevent deployments on national holidays. This is applied in addition to the "`NO_DEPLOYMENT_DAYS`" input. Defaults to "`true`"
     required: false
     default: 'true'
-  ONLY_BEFORE_MONDAY_HOLIDAY:
-    description: "???"
-    required: false
-    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'
