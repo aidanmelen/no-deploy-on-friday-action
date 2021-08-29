@@ -39,7 +39,7 @@ Simple example.
 - name: Checkout
   uses: actions/checkout@v2
 - name: No Deployments on Friday
-  uses: ./
+  uses: aws-actions/configure-aws-credentials@v0.1.0
   id: no-deployment-on-friday
 - name: Reason For Previous Step
   if: always()
@@ -54,7 +54,7 @@ Complete example.
 - name: Checkout
   uses: actions/checkout@v2
 - name: No Deployments on Friday
-  uses: ./
+  uses: aws-actions/configure-aws-credentials@v0.1.0
   id: no-deployment-on-friday
   env:
     NO_DEPLOYMENT_DAYS: 'Friday, Saturday, Sunday'
