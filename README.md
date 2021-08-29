@@ -37,6 +37,11 @@ Simple example.
 - name: No Deployments on Friday
   uses: ./
   id: no-deployment-on-friday
+- name: Get the output reason
+  if: always()
+  run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
+- name: Mock Deployment
+  run: echo "Deploy something here..."
 ```
 
 Complete example.
@@ -52,4 +57,9 @@ Complete example.
     TZ: 'MST'
     COUNTRY: 'US'
     HOLIDAYS: true
+- name: Get the output reason
+  if: always()
+  run: echo "${{ steps.no-deployment-on-friday.outputs.reason }}"
+- name: Mock Deployment
+  run: echo "Deploy something here..."
 ```
