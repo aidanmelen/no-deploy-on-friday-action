@@ -10,6 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install python requirements
-        run: pip install -r requirements.txt
+        run: |
+          ls -lah
+          pip install -r requirements.txt
       - name: Run python unittests
         run: python src/app/tests.py
