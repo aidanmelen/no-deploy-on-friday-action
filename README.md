@@ -23,7 +23,7 @@ This action aims to codify the unwritten rules like "No Deployments on Friday". 
 
 ## `HOLIDAYS`
 
-**Optional** Whether to prevent deployments on national holidays. This is applied in addition to the `NO_DEPLOYMENT_DAYS` input. Defaults to `true`
+**Optional** Whether to prevent deployments on national holidays. This depends on the `COUNTRY` input. This is applied in addition to the `NO_DEPLOYMENT_DAYS` input. Defaults to `true`
 
 ## Outputs
 

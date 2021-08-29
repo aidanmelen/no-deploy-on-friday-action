@@ -15,7 +15,7 @@ inputs:
     required: false
     default: 'US'
   HOLIDAYS:
-    description: Whether to prevent deployments on national holidays. This is applied in addition to the "`NO_DEPLOYMENT_DAYS`" input. Defaults to "`true`"
+    description: Whether to prevent deployments on national holidays. This depends on the `COUNTRY` input. This is applied in addition to the "`NO_DEPLOYMENT_DAYS`" input. Defaults to "`true`"
     required: false
     default: 'true'
 runs:
