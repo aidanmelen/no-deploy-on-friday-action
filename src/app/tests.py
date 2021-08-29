@@ -30,7 +30,7 @@ class TestMain(unittest.TestCase):
         mock_print.assert_has_calls(
             [
                 call(
-                    "Do not deploy today (Friday). We do not deploy on Friday, Saturday, and Sunday."
+                    "::set-output name=reason::Do not deploy today (Friday). We do not deploy on Friday, Saturday, and Sunday."
                 )
             ],
             any_order=False,
@@ -60,7 +60,7 @@ class TestMain(unittest.TestCase):
         mock_print.assert_has_calls(
             [
                 call(
-                    "Deploying today (Monday). We deploy on Monday, Thursday, Tuesday, and Wednesday"
+                    "::set-output name=reason::Deploying today (Monday). We deploy on Monday, Thursday, Tuesday, and Wednesday"
                 )
             ],
             any_order=False,
@@ -93,7 +93,7 @@ class TestMain(unittest.TestCase):
         mock_print.assert_has_calls(
             [
                 call(
-                    "Deploying today (Monday). We deploy on Monday, Thursday, Tuesday, and Wednesday"
+                    "::set-output name=reason::Deploying today (Monday). We deploy on Monday, Thursday, Tuesday, and Wednesday"
                 )
             ],
             any_order=False,
@@ -124,7 +124,11 @@ class TestMain(unittest.TestCase):
 
         # assert
         mock_print.assert_has_calls(
-            [call("Do not deploy today (Monday). We do not deploy on US holidays.")],
+            [
+                call(
+                    "::set-output name=reason::Do not deploy today (Monday). We do not deploy on US holidays."
+                )
+            ],
             any_order=False,
         )
 
