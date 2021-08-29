@@ -1,16 +1,16 @@
 [![Lint](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/lint.yml)
 [![Tests](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/tests.yml/badge.svg)](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/tests.yml)
-[![Main](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/main.yml/badge.svg)](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/main.yml)
+[![End2End](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/e2e.yml/badge.svg)](https://github.com/aidanmelen/no-deploy-on-friday-action/actions/workflows/e2e.yml)
 
 # No Deploy on Friday action
 
-This action aims to codify the unwritten rules like "No Deployments on Friday".. This is achieved by simply terminating the action with a non-zero exit code when the date conditions are met; which in turn, causes the remaining steps in the workflow to cancel. At last, your weekend is safe once again.
+This action aims to codify the unwritten rules like "No Deployments on Friday". This is achieved by simply terminating the action with a non-zero exit code when the date conditions are met; which in turn, causes the remaining steps in the workflow to cancel. At last, your weekend is safe once again.
 
 ## Inputs
 
 ## `NO_DEPLOYMENT_DAYS`
 
-**Optional** A comma delimited list of weekdays that we do not deploy on. Defaults to `"Friday, Saturday, Sunday"`.
+**Optional** A comma delimited list of weekdays that we do not deploy on. Defaults to `Friday, Saturday, Sunday`.
 
 ## `TZ`
 
@@ -18,12 +18,12 @@ This action aims to codify the unwritten rules like "No Deployments on Friday"..
 
 ## `COUNTRY`
 
-**Optional** The country of origin. This determines which the national holiday calendar to use. Defaults to "`US`"
+**Optional** The country of origin. This determines which the national holiday calendar to use. Defaults to `US`
 
 
 ## `HOLIDAYS`
 
-**Optional** Whether to prevent deployments on national holidays. This is applied in addition to the "`NO_DEPLOYMENT_DAYS`" input. Defaults to "`true`"
+**Optional** Whether to prevent deployments on national holidays. This is applied in addition to the `NO_DEPLOYMENT_DAYS` input. Defaults to `true`
 
 ## Outputs
 

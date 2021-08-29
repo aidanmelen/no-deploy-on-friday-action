@@ -27,3 +27,6 @@ runs:
     COUNTRY: ${{ inputs.country }}
     HOLIDAYS: ${{ inputs.holidays }}
     ONLY_BEFORE_MONDAY_HOLIDAY: ${{ inputs.ONLY_BEFORE_MONDAY_HOLIDAY }}
+branding:
+  icon: alert-octagon
+  color: red

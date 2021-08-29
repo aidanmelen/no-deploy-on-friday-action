@@ -1,4 +1,4 @@
-name: Main
+name: End2End
 on:
   workflow_dispatch:
 
