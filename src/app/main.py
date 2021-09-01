@@ -37,7 +37,7 @@ def main():
     else:
 
         additional_reason = (
-            " and on {inputs.COUNTRY} holidays." if inputs.HOLIDAYS.lower() == "true" else ""
+            f" and on {inputs.COUNTRY} holidays." if inputs.HOLIDAYS.lower() == "true" else ""
         )
         print(
             f"Deploying today ({day_name}). We deploy on {helpers.comma_separator(DEPLOYMENT_DAY_LIST)}{additional_reason}"
